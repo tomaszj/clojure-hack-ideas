@@ -1,8 +1,7 @@
 (ns hack-ideas.handler
   (:use hack-ideas.hack-ideas-controller)
+  (:use hack-ideas.application-layout)
   (:use compojure.core)
-  (:use hiccup.core)
-  (:use hiccup.page)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]))
 
