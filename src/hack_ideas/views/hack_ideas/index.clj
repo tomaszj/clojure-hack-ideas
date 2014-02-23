@@ -6,7 +6,7 @@
      (for [hack-idea hack-ideas] 
        [:div.idea 
         [:h2 (:name hack-idea)]
-        [:p [:em "Idea created on "(:created_at_pretty hack-idea)]]
+        [:p [:em "Idea created on " (:created_at_pretty hack-idea)]]
         [:p (:description hack-idea)]
         ])
     )

@@ -5,7 +5,7 @@
 
 (defn render-navbar "Renders a navigation bar" []
   [:nav.navbar.navbar-inverse {:role "navigation"}
-   [:div.navbar-header [:a.navbar-brand {:href "#"} "Hack Ideas!"]]
+   [:div.navbar-header [:a.navbar-brand {:href "/"} "Hack Ideas!"]]
    [:ul.nav.navbar-nav 
       [:li [:a {:href (hack-ideas-path)} "Explore ideas"]]
     ] 
@@ -28,7 +28,7 @@
          [:h1 "Hack Ideas!"]
          [:h4 "The best place to create and look for brilliant hack ideas."]
          ]
-        [:div.main_content content]
+        [:div.main_content.col-lg-12 content]
        ]
       (include-js "/js/jquery/dist/jquery.min.js")
       (include-js "/js/bootstrap/dist/js/bootstrap.min.js")
