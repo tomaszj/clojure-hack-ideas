@@ -3,6 +3,10 @@
   (require [hack-ideas.database :as db])
   )
 
+(defn find "retrieves a single idea" [idea-id]
+  (first (into [] (sql/query db/spec ["SELECT * FROM ideas WHERE id = ?" idea-id])))
+  )
+
 (defn all "retrieves all ideas" []
   (into [] (sql/query db/spec ["SELECT * FROM ideas ORDER BY created_at DESC"]))
   )

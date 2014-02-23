@@ -3,7 +3,6 @@
   (:require [hack-ideas.views.home.root :as view])
   )
 
-(defn get-root-page-handler [request]
-
+(defn get-root-page-handler []
   (render-page (view/render))
   )
