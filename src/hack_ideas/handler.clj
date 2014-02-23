@@ -1,7 +1,6 @@
 (ns hack-ideas.handler
   (:require [hack-ideas.controllers.home-controller :as home])
   (:require [hack-ideas.controllers.hack-ideas-controller :as hack-ideas])
-  (:use hack-ideas.application-layout)
   (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]))

@@ -1,5 +1,5 @@
 (ns hack-ideas.controllers.home-controller
-  (:use hack-ideas.application-layout)
+  (:use hack-ideas.views.application-layout)
   (:require [hack-ideas.views.home.root :as view])
   )
 
