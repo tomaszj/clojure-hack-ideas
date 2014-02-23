@@ -1,5 +1,5 @@
 (defproject hack-ideas "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+  :description "Hack ideas - simple app for sharing hack ideas with needed tools and data"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/java.jdbc "0.3.3"]
