@@ -1,4 +1,4 @@
-(ns hack-ideas.application-layout
+(ns hack-ideas.views.application-layout
   (:use hiccup.core)
   (:use hiccup.page)
   (:use hack-ideas.routes-helper))
