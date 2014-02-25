@@ -1,7 +1,7 @@
 (ns hack-ideas.views.application-layout
-  (:use hiccup.core)
-  (:use hiccup.page)
-  (:use hack-ideas.routes-helper))
+  (:require [hiccup.core :refer :all])
+  (:require [hiccup.page :refer :all])
+  (:require [hack-ideas.routes-helper :refer :all]))
 
 (defn render-navbar "Renders a navigation bar" []
   [:nav.navbar.navbar-inverse {:role "navigation"}

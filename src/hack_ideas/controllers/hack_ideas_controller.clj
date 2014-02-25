@@ -1,5 +1,5 @@
 (ns hack-ideas.controllers.hack-ideas-controller
-  (:use hack-ideas.views.application-layout)
+  (:require [hack-ideas.views.application-layout :refer [render-page]])
   (:require [hack-ideas.helpers.application-helper :as helper])
   (:require [hack-ideas.views.hack-ideas.index :as view])
   (:require [hack-ideas.views.hack-ideas.show :as show-view])
@@ -11,7 +11,7 @@
   )
 
 (defn get-hack-idea-handler [idea-id]
-  (def view-model (created-at-pretty-maker (idea/find idea-id)))
+  (def view-model (created-at-pretty-maker (idea/one idea-id)))
   (render-page (show-view/render view-model)) 
   )
 

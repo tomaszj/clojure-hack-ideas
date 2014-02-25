@@ -1,5 +1,5 @@
 (ns hack-ideas.views.home.root
-  (:use hiccup.core))
+  (:require [hiccup.core :refer :all]))
 
 (defn render []
   (html

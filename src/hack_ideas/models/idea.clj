@@ -1,9 +1,9 @@
 (ns hack-ideas.models.idea
-  (require [clojure.java.jdbc :as sql])
-  (require [hack-ideas.database :as db])
+  (:require [clojure.java.jdbc :as sql])
+  (:require [hack-ideas.database :as db])
   )
 
-(defn find "retrieves a single idea" [idea-id]
+(defn one "retrieves a single idea" [idea-id]
   (first (into [] (sql/query db/spec ["SELECT * FROM ideas WHERE id = ?" idea-id])))
   )
 
