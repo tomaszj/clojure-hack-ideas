@@ -4,9 +4,10 @@
 
 (defn render [hack-ideas]
   (html
-     (for [hack-idea hack-ideas] 
-       [:div.idea 
-        [:h2 [:a {:href (hack-idea-path (:id hack-idea))} (:name hack-idea)]]
-        ])
+    [:p.text-right [:a.btn.btn-primary {:href (new-hack-idea-path)} "Create a new, shiny idea!"]]
+    (for [hack-idea hack-ideas] 
+      [:div.idea 
+       [:h2 [:a {:href (hack-idea-path (:id hack-idea))} (:name hack-idea)]]
+       ])
     )
   )

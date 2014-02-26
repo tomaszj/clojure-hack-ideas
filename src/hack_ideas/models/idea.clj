@@ -11,3 +11,7 @@
   (into [] (sql/query db/spec ["SELECT * FROM ideas ORDER BY created_at DESC"]))
   )
 
+(defn create [attributes]
+  (first (sql/insert! db/spec :ideas attributes))
+  )
+
