@@ -5,4 +5,5 @@
 (defn edit-hack-idea-path [id] (format "/hack-ideas/%s/edit" id))
 
 (defn hack-idea-path [id] (format "/hack-ideas/%s" id))
+(defn create-hack-idea-path [id] (format "/hack-ideas/%s" id))
 

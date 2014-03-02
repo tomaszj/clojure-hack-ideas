@@ -13,6 +13,8 @@
   (assoc result :created_at_pretty (helper/pretty-date (:created_at result)))
   )
 
+(defn pristine-params [params] (select-keys (:hack-idea (keywordize-keys params)) [:name :description]))
+
 (defn get-hack-idea-handler [idea-id]
   (def view-model (created-at-pretty-maker (idea/one idea-id)))
   (render-page (show-view/render view-model)) 
@@ -33,9 +35,14 @@
   )
 
 (defn create-hack-idea-handler [params]
-  (def pristined-params (select-keys (:hack-idea (keywordize-keys params)) [:name :description]))
-  (def created-idea (idea/create pristined-params))
+  (def created-idea (idea/create (pristine-params params)))
   (def view-model (created-at-pretty-maker created-idea))
+  (render-page (show-view/render view-model))
+  )
+
+(defn update-hack-idea-handler [idea-id params]
+  (idea/update idea-id (pristine-params params))
+  (def view-model (created-at-pretty-maker (idea/one idea-id)))
   (render-page (show-view/render view-model))
   )
 

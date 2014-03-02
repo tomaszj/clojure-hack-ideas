@@ -7,7 +7,7 @@
   (html
     [:h2 "Update your idea!"]
     [:div.edit-idea.col-lg-4
-     (form-to [:put (hack-ideas-path)] 
+     (form-to [:put (create-hack-idea-path (:id hack-idea))] 
       (with-group "hack-idea"
         [:div.form-group 
          (label "name" "Idea name")

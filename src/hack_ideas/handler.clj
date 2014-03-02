@@ -5,7 +5,8 @@
             [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.middleware.params :refer [wrap-params]]
-            [ring.middleware.nested-params :refer [wrap-nested-params]]))
+            [ring.middleware.nested-params :refer [wrap-nested-params]]
+            [ring.middleware.cookies :refer [wrap-cookies]]))
 
 (defroutes app-routes
   (GET "/" [] (home/get-root-page-handler))
@@ -15,6 +16,7 @@
     (POST "/" {params :params} (ideas/create-hack-idea-handler params))
     (context ["/:id", :id #"\d+"] [id] (defroutes idea-routes
       (GET "/" [] (ideas/get-hack-idea-handler (Integer/parseInt id)))                          
+      (PUT "/" {params :params} (ideas/update-hack-idea-handler (Integer/parseInt id) params))
       (GET "/edit" [] (ideas/get-edit-hack-idea-handler (Integer/parseInt id)))                          
       ))
     ))
@@ -24,5 +26,6 @@
 (def app
   (-> app-routes
       wrap-nested-params
-      wrap-params))
+      wrap-params
+      wrap-cookies))
 

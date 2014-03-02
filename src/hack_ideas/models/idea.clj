@@ -15,3 +15,7 @@
   (first (sql/insert! db/spec :ideas attributes))
   )
 
+(defn update [id attributes]
+  (sql/update! db/spec :ideas attributes ["id = ?" id])
+  )
+
