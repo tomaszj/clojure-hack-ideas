@@ -8,7 +8,10 @@
       [:h2 (:name hack-idea)]
       [:p [:em "Idea created on " (:created_at_pretty hack-idea)]]
       [:p (:description hack-idea)]
-      [:p [:a {:href (hack-ideas-path)} "Back"]]
+      [:p 
+       [:a {:href (edit-hack-idea-path (:id hack-idea))} "Edit"]
+       " | "
+       [:a {:href (hack-ideas-path)} "Back"]]
       ]
     )
   )

@@ -15,6 +15,7 @@
     (POST "/" {params :params} (ideas/create-hack-idea-handler params))
     (context ["/:id", :id #"\d+"] [id] (defroutes idea-routes
       (GET "/" [] (ideas/get-hack-idea-handler (Integer/parseInt id)))                          
+      (GET "/edit" [] (ideas/get-edit-hack-idea-handler (Integer/parseInt id)))                          
       ))
     ))
   (route/resources "/")

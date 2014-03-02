@@ -4,6 +4,7 @@
             [hack-ideas.views.hack-ideas.index :as view]
             [hack-ideas.views.hack-ideas.show :as show-view]
             [hack-ideas.views.hack-ideas.new :as new-view]
+            [hack-ideas.views.hack-ideas.edit :as edit-view]
             [hack-ideas.models.idea :as idea]
             [clojure.walk :refer [keywordize-keys]]
   ))
@@ -24,6 +25,11 @@
 
 (defn get-new-hack-idea-handler []
   (render-page (new-view/render))
+  )
+
+(defn get-edit-hack-idea-handler [idea-id]
+  (def view-model (created-at-pretty-maker (idea/one idea-id)))
+  (render-page (edit-view/render view-model))
   )
 
 (defn create-hack-idea-handler [params]
