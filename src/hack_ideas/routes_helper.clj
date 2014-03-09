@@ -7,3 +7,4 @@
 (defn hack-idea-path [id] (format "/hack-ideas/%s" id))
 (defn create-hack-idea-path [id] (format "/hack-ideas/%s" id))
 
+(defn data-sources-path [] "/data-sources")

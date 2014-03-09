@@ -7,7 +7,8 @@
                  [clj-time "0.6.0"]
                  [compojure "1.1.6"]
                  [hiccup "1.0.5"]]
-  :plugins [[lein-ring "0.8.10"]]
+  :plugins [[lein-ring "0.8.10"]
+            [lein2-eclipse "2.0.0"]]
   :ring {:handler hack-ideas.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]

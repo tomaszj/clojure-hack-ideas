@@ -8,6 +8,7 @@
    [:div.navbar-header [:a.navbar-brand {:href "/"} "Hack Ideas!"]]
    [:ul.nav.navbar-nav 
       [:li [:a {:href (hack-ideas-path)} "Explore ideas"]]
+      [:li [:a {:href (data-sources-path)} "Look for data sources"]]
     ] 
    ]
   )
