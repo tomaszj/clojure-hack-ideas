@@ -8,3 +8,4 @@
 (defn create-hack-idea-path [id] (format "/hack-ideas/%s" id))
 
 (defn data-sources-path [] "/data-sources")
+(defn data-source-path [id] (format "/data-sources/%s" id))

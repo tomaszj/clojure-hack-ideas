@@ -20,7 +20,9 @@
       (PUT "/" {params :params} (ideas/update-hack-idea-handler (Integer/parseInt id) params))
       (GET "/edit" [] (ideas/get-edit-hack-idea-handler (Integer/parseInt id)))))))
   (context "/data-sources" [] (defroutes data-sources-routes
-    (GET "/" [] (data-sources/get-data-sources-handler))))
+    (GET "/" [] (data-sources/get-data-sources-handler))
+    (context ["/:id", :id #"\d+"] [id] (defroutes data-source-routes
+      (GET "/" [] (data-sources/get-data-source-handler (Integer/parseInt id)))))))
   (route/resources "/")
   (route/not-found "Not Found"))
 

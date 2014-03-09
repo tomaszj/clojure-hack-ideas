@@ -1,6 +1,6 @@
 (ns hack-ideas.views.hack-ideas.index
-  (:require [hack-ideas.routes-helper :refer :all])
-  (:require [hiccup.core :refer :all]))
+  (:require [hack-ideas.routes-helper :refer :all]
+            [hiccup.core :refer :all]))
 
 (defn render [hack-ideas]
   (html
